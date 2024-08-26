@@ -5,7 +5,7 @@ import { followUser, unfollowUser } from '../../actions/userAction'
 import { Link } from 'react-router-dom'
 
 const User = ({ person }) => {
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic = process.env.Vercel_APP_PUBLIC_FOLDER
 
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.authReducer.authData)
