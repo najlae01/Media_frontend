@@ -51,10 +51,10 @@ const ProfileCard = ({ location }) => {
             location === 'profilePage'
               ? profileUser.coverPicture
                 ? serverPublic + profileUser.coverPicture
-                : 'defaultCover.jpg'
+                : serverPublic + 'defaultCover.jpg'
               : user.coverPicture
               ? serverPublic + user.coverPicture
-              : 'defaultCover.jpg'
+              : serverPublic + 'defaultCover.jpg'
           }
           alt=''
         />
@@ -63,10 +63,10 @@ const ProfileCard = ({ location }) => {
             location === 'profilePage'
               ? profileUser.profilePicture
                 ? serverPublic + profileUser.profilePicture
-                : 'defaultProfile.jpg'
+                : serverPublic + 'defaultProfile.jpg'
               : user.profilePicture
               ? serverPublic + user.profilePicture
-              : 'defaultProfile.jpg'
+              : serverPublic + 'defaultProfile.jpg'
           }
           alt=''
         />
