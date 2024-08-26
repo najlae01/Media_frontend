@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Post from '../Post/post'
 import './posts.css'
 import { useEffect } from 'react'
-import { getTimeLinePosts } from '../../actions/PostAction'
+import { getAllPosts, getTimeLinePosts } from '../../actions/PostAction'
 import { useParams } from 'react-router-dom'
 
 const Posts = () => {
@@ -12,12 +12,19 @@ const Posts = () => {
   const { user } = useSelector((state) => state.authReducer.authData)
   let { posts, loading } = useSelector((state) => state.postReducer)
   const params = useParams()
+  // useEffect(() => {
+  //   dispatch(getTimeLinePosts(user._id))
+  // }, [dispatch, user._id])
+
   useEffect(() => {
-    dispatch(getTimeLinePosts(user._id))
-  }, [dispatch, user._id])
+    posts = dispatch(getAllPosts())
+  }, [dispatch])
 
   if (!posts) return 'No posts yet!'
-  if (params.id) posts = posts.filter((post) => post.userId === params.id)
+  if (params.id && posts) {
+    posts = posts.filter((post) => post.userId === params.id)
+  }
+
   return (
     <div className='Posts'>
       {loading
