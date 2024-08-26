@@ -5,7 +5,7 @@ import { followUser, unfollowUser } from '../../actions/userAction'
 import { Link } from 'react-router-dom'
 
 const User = ({ person }) => {
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic = 'https://media-backend-ymug.vercel.app/images/'
 
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.authReducer.authData)

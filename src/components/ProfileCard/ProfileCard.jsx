@@ -21,7 +21,7 @@ const ProfileCard = ({ location }) => {
   const [profileUserFollowers, setProfileUserFollowers] = useState([])
 
   const posts = useSelector((state) => state.postReducer.posts)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic = 'https://media-backend-ymug.vercel.app/images/'
 
   useEffect(() => {
     const fetchProfileUser = async () => {

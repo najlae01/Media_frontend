@@ -29,7 +29,11 @@ const Post = ({ data }) => {
   return (
     <div className='Post'>
       <img
-        src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ''}
+        src={
+          data.image
+            ? 'https://media-backend-ymug.vercel.app/images/' + data.image
+            : ''
+        }
         alt=''
       />
       <div className='postReact'>
