@@ -1,36 +1,40 @@
 import {
-    legacy_createStore as createStore,
-    applyMiddleware,
-    compose
+  legacy_createStore as createStore,
+  applyMiddleware,
+  compose,
 } from 'redux'
-import thunk from "redux-thunk"
-import {reducers} from "../reducers"
+import {thunk} from 'redux-thunk'
+import { reducers } from '../reducers'
 
-function saveToLocalStorage(store){
-    try {
-        const serializedStore = JSON.stringify(store);
-        window.localStorage.setItem('store', serializedStore)
-    } catch (error) {
-        console.log(error)
-    }
+function saveToLocalStorage(store) {
+  try {
+    const serializedStore = JSON.stringify(store)
+    window.localStorage.setItem('store', serializedStore)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-function loadFromLocalStorage(){
-    try {
-        const serializedStore = window.localStorage.getItem('store')
-        if(serializedStore === null) return undefined;
-        return JSON.parse(serializedStore )
-    } catch (error) {
-        console.log(error)
-        return undefined;
-    }
+function loadFromLocalStorage() {
+  try {
+    const serializedStore = window.localStorage.getItem('store')
+    if (serializedStore === null) return undefined
+    return JSON.parse(serializedStore)
+  } catch (error) {
+    console.log(error)
+    return undefined
+  }
 }
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__ || compose;
-const persistedState = loadFromLocalStorage();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__ || compose
+const persistedState = loadFromLocalStorage()
 
-const store = createStore(reducers, persistedState, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(
+  reducers,
+  persistedState,
+  composeEnhancers(applyMiddleware(thunk))
+)
 
-store.subscribe(() => saveToLocalStorage(store.getState()));
+store.subscribe(() => saveToLocalStorage(store.getState()))
 
-export default store;
+export default store

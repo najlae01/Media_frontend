@@ -32,11 +32,13 @@
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+    margin: 0rem !important;
 
 }
 
 .webName>h6{
     font-size: 0.85rem;
+    margin: 0rem !important;
 }
 
 .infoForm{
@@ -58,6 +60,7 @@
 .infoForm>div{
     display: flex;
     gap: 1rem;
+    margin: 0.4rem;
     height: 2rem;
     width: 100%;
 }
