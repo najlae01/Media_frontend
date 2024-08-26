@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: 'http://localhost:5000' })
+const API = axios.create({ baseURL: 'https://media-backend-taupe.vercel.app' })
 
 export const getTimeLinePosts = (id) => API.get(`/posts/${id}/timeline`)
 
