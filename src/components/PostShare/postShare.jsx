@@ -15,7 +15,7 @@ const PostShare = () => {
   const [image, setImage] = useState(null)
   const imageRef = useRef()
   const { user } = useSelector((state) => state.authReducer.authData)
-  const serverPublic = 'https://media-backend-ymug.vercel.app/images/'
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
   const desc = useRef()
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
