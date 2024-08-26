@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: 'https://media-backend-taupe.vercel.app' })
+const API = axios.create({ baseURL: 'https://media-backend-ymug.vercel.app' })
 
 export const uploadImage = (data) => API.post('/upload', data)
 
