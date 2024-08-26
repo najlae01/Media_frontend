@@ -6,6 +6,7 @@ export const updateUser = (id, userData, token) => async (dispatch) => {
     let axiosConfig = {
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
         Authorization: `Bearer ${token}`,
         MyCustomHeader1: '1',
       },
@@ -22,6 +23,7 @@ export const followUser = (id, data, token) => async (dispatch) => {
   let axiosConfig = {
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
       Authorization: `Bearer ${token}`,
     },
   }
@@ -33,6 +35,7 @@ export const unfollowUser = (id, data, token) => async (dispatch) => {
   let axiosConfig = {
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
       Authorization: `Bearer ${token}`,
     },
   }
