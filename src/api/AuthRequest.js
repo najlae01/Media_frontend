@@ -2,5 +2,15 @@ import axios from 'axios'
 
 const API = axios.create({ baseURL: 'https://media-backend-taupe.vercel.app' })
 
-export const logIn = (formData) => API.post('/auth/login', formData)
-export const signUp = (formData) => API.post('/auth/register', formData)
+export const logIn = (formData) =>
+  API.post('/auth/login', formData, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+export const signUp = (formData) =>
+  API.post('/auth/register', formData, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
