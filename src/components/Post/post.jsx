@@ -29,9 +29,7 @@ const Post = ({ data }) => {
   return (
     <div className='Post'>
       <img
-        src={
-          data.image ? process.env.Vercel_APP_PUBLIC_FOLDER + data.image : ''
-        }
+        src={data.image ? process.env.NEXT_APP_PUBLIC_FOLDER + data.image : ''}
         alt=''
       />
       <div className='postReact'>

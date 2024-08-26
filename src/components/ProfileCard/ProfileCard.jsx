@@ -21,7 +21,7 @@ const ProfileCard = ({ location }) => {
   const [profileUserFollowers, setProfileUserFollowers] = useState([])
 
   const posts = useSelector((state) => state.postReducer.posts)
-  const serverPublic = process.env.Vercel_APP_PUBLIC_FOLDER
+  const serverPublic = process.env.NEXT_APP_PUBLIC_FOLDER
 
   useEffect(() => {
     const fetchProfileUser = async () => {
